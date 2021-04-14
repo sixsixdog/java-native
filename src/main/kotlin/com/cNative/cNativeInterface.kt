@@ -12,7 +12,7 @@ import com.sun.jna.Native
  */
 
 interface NativeLibrary : Library {
-    fun fnNativeDLL(a:Int,b:Int):Int;
+    fun fnNativeDLL(a:Int,b:Int):Int
     companion object {
         private val dll: String = System.getProperty("user.dir")
         val LIBRARY = Native.loadLibrary("$dll\\src\\main\\resources\\NativeDLL.dll", NativeLibrary::class.java) as NativeLibrary

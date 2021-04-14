@@ -16,6 +16,7 @@ dependencies {
     testImplementation(kotlin("test-junit"))
     // https://mvnrepository.com/artifact/com.sun.jna/jna
     implementation ("com.sun.jna:jna:3.0.9")
+    implementation(kotlin("stdlib-jdk8"))
 
 }
 
@@ -29,4 +30,12 @@ tasks.withType<KotlinCompile>() {
 
 application {
     mainClassName = "MainKt"
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }
